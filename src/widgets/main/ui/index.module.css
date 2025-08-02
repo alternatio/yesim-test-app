@@ -1,0 +1,25 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0.5rem 0 1.5rem 0;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	background: var(--surface);
+	border-radius: 1.25rem;
+}
+
+.title {
+	font-size: var(--font-subtitle-size);
+	font-weight: var(--font-subtitle-weight);
+	line-height: var(--font-subtitle-line-height);
+	letter-spacing: var(--font-subtitle-letter-spacing);
+
+	padding: 1rem 1rem 0.75rem;
+}
+
+.popularCountries {
+}

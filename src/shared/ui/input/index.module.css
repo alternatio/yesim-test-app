@@ -1,0 +1,22 @@
+.label {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	background: var(--input-surface);
+	border-radius: 1rem;
+	cursor: text;
+	transition: background 0.2s ease;
+
+	&:focus-within {
+		background: var(--input-surface-focus);
+	}
+}
+
+.input {
+	font-size: var(--font-body-size);
+	font-weight: var(--font-body-weight);
+	line-height: var(--font-body-line-height);
+	letter-spacing: var(--font-body-letter-spacing);
+	color: var(--foreground);
+}
