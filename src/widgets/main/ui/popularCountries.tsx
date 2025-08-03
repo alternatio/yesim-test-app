@@ -18,10 +18,7 @@ const PopularCountries: FC = async () => {
 			<h2 className={style.title}>Популярные страны</h2>
 			<div className={style.countries}>
 				{ruCountries.map(data => (
-					<CountryCard
-						key={data.id}
-						country={data}
-					/>
+					<CountryCard key={data.id} country={data} />
 				))}
 			</div>
 			<div className={style.loadMore}>
