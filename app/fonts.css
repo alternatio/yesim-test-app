@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Inter';
-	src: url('/public/InterVariable.ttf') format('truetype');
+	src: url('/InterVariable.ttf') format('truetype');
 	font-display: swap;
 	font-weight: 100 900;
 	font-style: normal;
