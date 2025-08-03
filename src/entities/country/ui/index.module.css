@@ -8,6 +8,13 @@
 	padding: 0 1rem;
 	border-radius: 1.25rem;
 	background: var(--surface);
+
+	&[data-only-body='false'] {
+		@media (min-width: 720px) {
+			border-radius: 1rem;
+			background: var(--background);
+		}
+	}
 }
 
 .content {

@@ -17,11 +17,20 @@ const CountryPage: FC<CountryPageProps> = ({ country }) => {
 				<main className={style.main}>
 					<div className={style.countryHeader}>
 						<div className={style.countryInfo}>
-							<h1 className={style.countryTitle}>{country.country}</h1>
-							<p className={style.countryDescription}>Туристические SIM-карты с интернетом</p>
+							<h1 className={style.countryTitle}>
+								{country.country}
+							</h1>
+							<p className={style.countryDescription}>
+								Туристические SIM-карты с интернетом
+							</p>
 						</div>
 						<div className={style.flagWrapper}>
-							<Image src={`/flags/${country.iso?.toLowerCase()}.svg`} alt={country.iso ?? 'country iso'} width={32} height={32} />
+							<Image
+								src={`/flags/${country.iso?.toLowerCase()}.svg`}
+								alt={country.iso ?? 'country iso'}
+								width={32}
+								height={32}
+							/>
 						</div>
 					</div>
 					<HowItsWork />

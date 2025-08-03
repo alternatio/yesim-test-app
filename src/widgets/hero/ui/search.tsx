@@ -22,7 +22,7 @@ const HeroSearch = () => {
 				value={searchQuery}
 				onChange={value => handleSearch(value.target.value)}
 			/>
-			<SearchDropdown searchQuery={searchQuery} />
+			<SearchDropdown />
 		</div>
 	)
 }

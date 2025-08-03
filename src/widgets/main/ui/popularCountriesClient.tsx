@@ -11,12 +11,16 @@ interface PopularCountriesClientProps {
 	countries: CountryI[]
 }
 
-const PopularCountriesClient: FC<PopularCountriesClientProps> = ({ countries }) => {
+const PopularCountriesClient: FC<PopularCountriesClientProps> = ({
+	countries
+}) => {
 	const { setCountries } = useCountriesStore()
 	const [showAll, setShowAll] = useState(true)
 	const initialCount = 12
 
-	const displayedCountries = showAll ? countries : countries.slice(0, initialCount)
+	const displayedCountries = showAll
+		? countries
+		: countries.slice(0, initialCount)
 	const hasMoreCountries = countries.length > initialCount
 
 	const handleShowAll = () => {
@@ -37,7 +41,10 @@ const PopularCountriesClient: FC<PopularCountriesClientProps> = ({ countries }) 
 			</div>
 			{hasMoreCountries && !showAll && (
 				<div className={style.loadMore}>
-					<TextButton text='Показать все страны' onClick={handleShowAll} />
+					<TextButton
+						text='Показать все страны'
+						onClick={handleShowAll}
+					/>
 				</div>
 			)}
 		</>

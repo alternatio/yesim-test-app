@@ -14,7 +14,7 @@ async function findCountry(url: string) {
 	const countries = await countryApi.fetchCountries()
 
 	for (const c of Object.values(countries.countries || {})) {
-		const country = c.find((c) => {
+		const country = c.find(c => {
 			console.log(c.url, url)
 			return c.url === url
 		})
@@ -62,17 +62,19 @@ export async function generateStaticParams() {
 	const countryApi = new CountryApi()
 	const countries = await countryApi.fetchCountries()
 	const slugs: string[] = []
-	Object.values(countries.countries || {}).forEach((countryGroup) => {
-		countryGroup.forEach((country) => {
+	Object.values(countries.countries || {}).forEach(countryGroup => {
+		countryGroup.forEach(country => {
 			if (country.url) {
-				const slug = country.url.includes('/') ? country.url.split('/').pop() : country.url
+				const slug = country.url.includes('/')
+					? country.url.split('/').pop()
+					: country.url
 				if (slug && !slugs.includes(slug)) {
 					slugs.push(slug)
 				}
 			}
 		})
 	})
-	return slugs.map((slug) => ({
+	return slugs.map(slug => ({
 		countryName: slug
 	}))
 }

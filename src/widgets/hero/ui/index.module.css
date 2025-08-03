@@ -31,7 +31,6 @@
 	left: 0;
 	width: 100%;
 	background: var(--surface);
-	min-height: 8.125rem;
 	max-height: 18.75rem;
 
 	box-shadow: 0 0.5rem 0.625rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -39,8 +38,19 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: 1.25rem;
+
+	overflow-y: auto;
+	padding: 0.5rem 0;
+}
+
+.card {
+	padding: 0.625rem 1rem;
 }
 
 .notFound {
 	margin: auto;
+	min-height: 8.125rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

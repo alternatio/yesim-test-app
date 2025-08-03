@@ -23,14 +23,17 @@ const HowItsWork: FC = () => {
 	}, [])
 
 	// move
-	const handleMouseMove = useCallback((e: React.MouseEvent) => {
-		if (!isDragging || !scrollContainerRef.current) return
+	const handleMouseMove = useCallback(
+		(e: React.MouseEvent) => {
+			if (!isDragging || !scrollContainerRef.current) return
 
-		e.preventDefault()
-		const x = e.pageX - scrollContainerRef.current.offsetLeft
-		const walk = (x - startX) * 1.2 // Множитель для скорости прокрутки
-		scrollContainerRef.current.scrollLeft = scrollLeft - walk
-	}, [isDragging, startX, scrollLeft])
+			e.preventDefault()
+			const x = e.pageX - scrollContainerRef.current.offsetLeft
+			const walk = (x - startX) * 1.2 // Множитель для скорости прокрутки
+			scrollContainerRef.current.scrollLeft = scrollLeft - walk
+		},
+		[isDragging, startX, scrollLeft]
+	)
 
 	const handleMouseUp = useCallback(() => {
 		setIsDragging(false)
@@ -51,13 +54,16 @@ const HowItsWork: FC = () => {
 	}, [])
 
 	// move
-	const handleTouchMove = useCallback((e: React.TouchEvent) => {
-		if (!isDragging || !scrollContainerRef.current) return
+	const handleTouchMove = useCallback(
+		(e: React.TouchEvent) => {
+			if (!isDragging || !scrollContainerRef.current) return
 
-		const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft
-		const walk = (x - startX) * 1
-		scrollContainerRef.current.scrollLeft = scrollLeft - walk
-	}, [isDragging, startX, scrollLeft])
+			const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft
+			const walk = (x - startX) * 1
+			scrollContainerRef.current.scrollLeft = scrollLeft - walk
+		},
+		[isDragging, startX, scrollLeft]
+	)
 
 	const handleTouchEnd = useCallback(() => {
 		setIsDragging(false)
@@ -77,12 +83,10 @@ const HowItsWork: FC = () => {
 				onTouchMove={handleTouchMove}
 				onTouchEnd={handleTouchEnd}
 			>
-				{steps.map((step) => {
+				{steps.map(step => {
 					return (
 						<div key={step.title} className={style.step}>
-							<h3 className={style.stepTitle}>
-								{step.title}
-							</h3>
+							<h3 className={style.stepTitle}>{step.title}</h3>
 							<div className={style.stepImage} />
 						</div>
 					)
