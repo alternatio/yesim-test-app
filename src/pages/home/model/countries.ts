@@ -1,10 +1,10 @@
 // zustand store
-import { CountriesI } from '@/src/entities/country/model/country'
+import { CountryI } from '@/src/entities/country/model/country'
 import { create } from 'zustand'
 
 interface CountriesStore {
-	countries: CountriesI
-	setCountries: (countries: CountriesI) => void
+	countries: CountryI[]
+	setCountries: (countries: CountryI[]) => void
 }
 
 export const useCountriesStore = create<CountriesStore>(set => ({
