@@ -11,7 +11,6 @@ const HeroSearch = () => {
 
 	const handleSearch = (value: string) => {
 		setSearchQuery(value)
-		console.log(value)
 	}
 
 	return (

@@ -18,7 +18,7 @@
 	/* title */
 	--font-title-size: 1.75rem;
 	--font-title-weight: 700;
-	--font-title-line-height: 100%;
+	--font-title-line-height: 2rem;
 	--font-title-letter-spacing: 0;
 
 	/* subtitle */
@@ -38,6 +38,14 @@
 	--font-caption-weight: 400;
 	--font-caption-line-height: 0.875rem;
 	--font-caption-letter-spacing: 0.0075rem;
+
+	/* media */
+	@media (min-width: 720px) {
+		--font-title-size: 2.125rem;
+		--font-title-line-height: 2.5rem;
+
+		--font-subtitle-size: 1.5rem;
+	}
 }
 
 html,

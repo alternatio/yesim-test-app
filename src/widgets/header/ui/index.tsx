@@ -6,9 +6,11 @@ import style from './index.module.css'
 const Header: FC = () => {
 	return (
 		<header className={style.header}>
-			<Link href={'/'}>
-				<Logo />
-			</Link>
+			<div className={style.headerWrapper}>
+				<Link href={'/'}>
+					<Logo />
+				</Link>
+			</div>
 		</header>
 	)
 }

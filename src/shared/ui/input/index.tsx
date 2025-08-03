@@ -8,6 +8,8 @@ interface InputProps {
 	placeholder?: string
 	prefix?: ReactNode
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+	onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+	onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
 }
 
 const Input: FC<InputProps> = ({
@@ -16,7 +18,9 @@ const Input: FC<InputProps> = ({
 	value,
 	placeholder,
 	prefix,
-	onChange
+	onChange,
+	onFocus,
+	onBlur,
 }) => {
 	return (
 		<label className={style.label}>
@@ -28,6 +32,8 @@ const Input: FC<InputProps> = ({
 				value={value}
 				placeholder={placeholder}
 				onChange={onChange}
+				onFocus={onFocus}
+				onBlur={onBlur}
 			/>
 		</label>
 	)

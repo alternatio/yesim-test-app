@@ -10,31 +10,48 @@ import style from './index.module.css'
 interface CountryCardProps {
 	country: CountryI
 	cardStyle?: CSSProperties
+	cardClassName?: string
 	onlyBody?: boolean
+	onClick?: () => void
 }
 
-const CountryCard: FC<CountryCardProps> = ({ country, cardStyle, onlyBody }) => {
+const CountryCard: FC<CountryCardProps> = ({
+	country,
+	cardStyle,
+	cardClassName,
+	onlyBody,
+	onClick,
+}) => {
 	if (country.url) {
 		const href = country.url
 		return (
-			<Link href={href} className={style.card} style={cardStyle} data-only-body={!!onlyBody}>
-				<div className={style.content}>
-					<div className={style.flagWrapper}>
-						<Image
-							src={`/flags/${country.iso?.toLowerCase()}.svg`}
-							alt={country.iso ?? 'country iso'}
-							width={32}
-							height={32}
-						/>
+			<Link
+				onClick={onClick}
+				href={href}
+				className={`${style.card} ${cardClassName}`}
+				style={cardStyle}
+				data-only-body={!!onlyBody}
+				title={country.country}
+			>
+				<div className={style.cardWrapper}>
+					<div className={style.content}>
+						<div className={style.flagWrapper}>
+							<Image
+								src={`/flags/${country.iso?.toLowerCase()}.svg`}
+								alt={country.iso ?? 'country iso'}
+								width={32}
+								height={32}
+							/>
+						</div>
+						<div className={style.info}>
+							<span className={style.title}>{country.country}</span>
+							<span className={style.price}>
+								{country.classic_info?.price_per_gb + ' ₽/ГБ'}
+							</span>
+						</div>
 					</div>
-					<div className={style.info}>
-						<span className={style.title}>{country.country}</span>
-						<span className={style.price}>
-							{country.classic_info?.price_per_gb + ' ₽/ГБ'}
-						</span>
-					</div>
+					<ChevronIcon />
 				</div>
-				<ChevronIcon />
 			</Link>
 		)
 	} else {

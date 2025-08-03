@@ -24,7 +24,13 @@ const PopularCountriesClient: FC<PopularCountriesClientProps> = ({
 	const hasMoreCountries = countries.length > initialCount
 
 	const handleShowAll = () => {
-		setShowAll(true)
+		if (showAll == true) {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			})
+		}
+		setShowAll(!showAll)
 	}
 
 	useEffect(() => {
@@ -36,13 +42,17 @@ const PopularCountriesClient: FC<PopularCountriesClientProps> = ({
 		<>
 			<div className={style.countries}>
 				{displayedCountries.map(data => (
-					<CountryCard key={data.id} country={data} />
+					<CountryCard
+						key={data.id}
+						country={data}
+						cardClassName={style.countryCard}
+					/>
 				))}
 			</div>
-			{hasMoreCountries && !showAll && (
+			{hasMoreCountries && (
 				<div className={style.loadMore}>
 					<TextButton
-						text='Показать все страны'
+						text={showAll ? 'Показать меньше' : 'Показать все страны'}
 						onClick={handleShowAll}
 					/>
 				</div>
