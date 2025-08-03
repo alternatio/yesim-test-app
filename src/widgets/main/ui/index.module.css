@@ -26,4 +26,11 @@
 }
 
 .popularCountries {
+	display: flex;
+	flex-direction: column;
+}
+
+.countries {
+	display: flex;
+	flex-direction: column;
 }

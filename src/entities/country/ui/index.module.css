@@ -1,0 +1,45 @@
+.card {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	height: 3.625rem;
+	padding: 0 1rem;
+	border-radius: 1.25rem;
+	background: var(--surface);
+}
+
+.content {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.flagWrapper {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background: var(--background);
+	overflow: hidden;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.125rem;
+}
+
+.title {
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.125rem;
+}
+
+.price {
+	font-size: var(--font-caption-size);
+	font-weight: var(--font-caption-weight);
+	line-height: var(--font-caption-line-height);
+	letter-spacing: var(--font-caption-letter-spacing);
+}

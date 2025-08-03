@@ -5,13 +5,7 @@ import TextButton from '@/src/shared/ui/buttons/textButton'
 import { FC } from 'react'
 import style from './index.module.css'
 
-interface PopularCountriesProps {
-	showMore?: () => void
-}
-
-const PopularCountries: FC<PopularCountriesProps> = async ({
-	showMore
-}) => {
+const PopularCountries: FC = async () => {
 	// for seo
 	const countryApi = new CountryApi()
 	const countries = await countryApi.fetchCountries()
